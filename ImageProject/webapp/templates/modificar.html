@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'list_autos' %}">Inicio</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="{% url 'create_autos' %}">Registrar </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container mt-3">
+
+<form action="{% url 'update_autos' auto.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3 mt-3">
+    <label for="">Patente</label><input type="text" name="txtPatente" id="txtPatente" value="{{ auto.patente }}">
+    <br>
+    </div>
+    <div class="mb-3 mt-3">
+    <label for="">Marca</label><input type="text" name="txtMarca" id="txtMarca" value="{{ auto.marca }}">
+    <br>
+    </div>
+    <div class="mb-3 mt-3">
+    <label for="">Modelo</label><input type="text" name="txtModelo" id="txtModelo" value="{{ auto.modelo }}">
+    <br>
+    </div>
+    <div class="mb-3 mt-3">
+    <label for="">Año</label><input type="number" name="txtAnio" id="txtAnio" value="{{ auto.anio }}">
+    <br>
+    </div>
+    <div class="mb-3">
+        {% if auto.imagen %}
+             <img src="{{ auto.imagen.url }}" alt="image here" width="10%" class="prod-size">
+        {% endif %}
+        <label for="" class="form-label">Imagen</label>
+        <input type="file" name="imagen" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+
+</form>
+</div>
+
+</body>
+</html>
+
