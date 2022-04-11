@@ -1,0 +1,55 @@
+# CRUD-PYTHON-DJANGO
+Projecto realizado con con Python, framework Django.
+
+******
+## *Para realizar el proyecto:* 🚀
+
+- Instalando el ambiente:
+pip.exe install virtualenv
+
+- Creando un ambiente virtualizado:
+virtualenv venv
+cd venv
+cd Scripts
+activate
+
+- Instalar Django(framework) y Pillow para las imágenes:
+
+python -m pip install django
+python -m pip install Pillow
+
+-revisar la versión de django:
+django-admin version
+
+
+- Crear el projecto:
+django-admin startproject ImageProject
+
+- Crear la aplicación:
+django-admin startapp webapp
+
+- Correr la aplicación:
+#movernos a la nueva carpeta del proyecto
+#donde está el archivo manage.py
+cd ImageProject
+
+#ejecutar la aplicación:
+python manage.py runserver
+#abrir un navegador y escribir: 
+python manage.py runserver
+127.0.0.1:8000
+
+- Para efectuar modificaciones en la base de datos ejecutar:
+python manage.py makemigrations
+python manage.py migrate
+
+- Para crear usuario en el admin:
+python manage.py createsuperuser
+
+
+### *Tecnologias usadas:*
+- Python(Django)
+- IDE PyCharm (info para otro IDE como visual code   https://code.visualstudio.com/docs/python/tutorial-django
+)
+
+
